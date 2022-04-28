@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">TravellyCompose</string>
+    <string name="avatar_image">Avatar Image</string>
 </resources>
