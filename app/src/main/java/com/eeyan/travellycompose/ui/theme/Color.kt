@@ -59,6 +59,9 @@ val md_theme_dark_inversePrimary = Color(0xFF2a51d5)
 val md_theme_dark_shadow = Color(0xFF000000)
 
 
+val md_theme_image_overlay = Color(0x80000000)
+
+
 
 val seed = Color(0xFF6750A4)
 val error = Color(0xFFB3261E)

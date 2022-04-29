@@ -6,6 +6,10 @@
     <dimen name="tab_text_pad">10dp</dimen>
     <dimen name="tab_indicator">15dp</dimen>
     <dimen name="card_corner">10dp</dimen>
-    <dimen name="card_size">250dp</dimen>
+    <dimen name="card_size">300dp</dimen>
+    <dimen name="card_size_width">250dp</dimen>
     <dimen name="card_elevation">5dp</dimen>
+    <dimen name="like_btn_size">35dp</dimen>
+    <dimen name="like_btn_image_size">30dp</dimen>
+    <dimen name="like_btn_margin">2dp</dimen>
 </resources>
