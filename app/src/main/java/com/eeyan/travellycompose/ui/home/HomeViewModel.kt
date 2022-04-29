@@ -16,5 +16,6 @@ class HomeViewModel
         get() = _state
 
     val profileURL = Constants.PROFILE
+    val titles = Constants.TAB_TITLES
 
 }

@@ -18,6 +18,8 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
 import coil.compose.AsyncImage
 import com.eeyan.travellycompose.R
+import com.eeyan.travellycompose.ui.components.AppImage
+import com.eeyan.travellycompose.ui.components.CustomTabs
 
 @Composable
 @ExperimentalMaterial3Api
@@ -34,7 +36,9 @@ fun HomePage(
                     .fillMaxWidth()
                     .padding(
                         start = dimensionResource(id = R.dimen.global_margin),
-                        end = dimensionResource(id = R.dimen.global_margin)),
+                        end = dimensionResource(id = R.dimen.global_margin),
+                        top = dimensionResource(id = R.dimen.global_margin)
+                    ),
 
                     horizontalArrangement = Arrangement.SpaceBetween) {
 
@@ -46,19 +50,12 @@ fun HomePage(
                         .align(Alignment.CenterVertically), url = homeViewModel.profileURL)
                     
                 }
+
+
+                CustomTabs(modifier = Modifier.padding(start = dimensionResource(id = R.dimen.global_margin),
+                    top = dimensionResource(id = R.dimen.global_margin)), list = homeViewModel.titles)
+
         }
 }
 
 
-@Composable
-fun AppImage(modifier: Modifier, url:String) {
-    
-    AsyncImage(
-        modifier = modifier
-            .width(dimensionResource(id = R.dimen.logo_size))
-            .height(dimensionResource(id = R.dimen.logo_size))
-            .clip(CircleShape),
-        model = url,
-        contentDescription = stringResource(id = R.string.avatar_image))
-    
-}

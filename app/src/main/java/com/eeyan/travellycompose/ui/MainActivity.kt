@@ -32,8 +32,7 @@ class MainActivity : ComponentActivity() {
             AppTheme {
                 Scaffold(
                     modifier = Modifier
-                        .fillMaxSize()
-                        .padding(top = dimensionResource(id = R.dimen.global_margin))) {
+                        .fillMaxSize()) {
 
                     val navController = rememberNavController()
 
