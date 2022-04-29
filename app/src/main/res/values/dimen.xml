@@ -5,4 +5,7 @@
     <dimen name="logo_size">50dp</dimen>
     <dimen name="tab_text_pad">10dp</dimen>
     <dimen name="tab_indicator">15dp</dimen>
+    <dimen name="card_corner">10dp</dimen>
+    <dimen name="card_size">250dp</dimen>
+    <dimen name="card_elevation">5dp</dimen>
 </resources>
