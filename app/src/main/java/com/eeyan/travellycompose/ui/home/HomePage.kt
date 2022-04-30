@@ -1,5 +1,6 @@
 package com.eeyan.travellycompose.ui.home
 
+import androidx.compose.animation.animateContentSize
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.items
@@ -20,7 +21,9 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
 import coil.compose.AsyncImage
 import com.eeyan.travellycompose.R
+import com.eeyan.travellycompose.data.model.Adventure
 import com.eeyan.travellycompose.data.model.Sight
+import com.eeyan.travellycompose.ui.components.AdventureMenu
 import com.eeyan.travellycompose.ui.components.AppImage
 import com.eeyan.travellycompose.ui.components.CustomTabs
 import com.eeyan.travellycompose.ui.components.SightCard
@@ -70,6 +73,44 @@ fun HomePage(
                      }
 
                 }
+
+
+                Row(modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(
+                        start = dimensionResource(id = R.dimen.global_margin),
+                        end = dimensionResource(id = R.dimen.global_margin),
+                        top = dimensionResource(id = R.dimen.global_margin)
+                    ), horizontalArrangement = Arrangement.SpaceBetween){
+
+
+                    Text(text = stringResource(id = R.string.adventurous), style = MaterialTheme.typography.bodyLarge)
+
+                    Text(text = stringResource(id = R.string.all), style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.primary)
+
+
+                }
+
+
+                LazyRow(modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(
+                        start = dimensionResource(
+                            id = R.dimen.global_margin
+                        ),
+                        end = dimensionResource(
+                            id = R.dimen.global_margin
+                        ),
+                        top = dimensionResource(id = R.dimen.global_margin)
+                    )
+                    .animateContentSize(),
+                    horizontalArrangement = Arrangement.SpaceBetween,
+                    contentPadding = PaddingValues(horizontal = dimensionResource(id = R.dimen.global_margin))){
+                    items(homeViewModel.adventureList){
+                        item: Adventure -> AdventureMenu(modifier = Modifier, adventure = item)
+                    }
+                }
+
 
         }
 }

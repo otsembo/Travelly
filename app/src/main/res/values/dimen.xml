@@ -12,4 +12,5 @@
     <dimen name="like_btn_size">35dp</dimen>
     <dimen name="like_btn_image_size">30dp</dimen>
     <dimen name="like_btn_margin">2dp</dimen>
+    <dimen name="adventure_icon">65dp</dimen>
 </resources>

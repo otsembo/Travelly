@@ -4,6 +4,7 @@ import androidx.compose.runtime.State
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import com.eeyan.travellycompose.common.Constants
+import com.eeyan.travellycompose.data.model.Adventure
 import com.eeyan.travellycompose.data.model.Sight
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
@@ -19,6 +20,7 @@ class HomeViewModel
     val profileURL = Constants.PROFILE
     val titles = Constants.TAB_TITLES
     val sights = setSights()
+    val adventureList = createAdventures()
 
 
     private fun setSights() : List<Sight>{
@@ -40,6 +42,33 @@ class HomeViewModel
         )
 
         return sightList
+    }
+
+    private fun createAdventures() : List<Adventure>{
+        val adventures = ArrayList<Adventure>()
+
+        adventures.add(
+            Adventure(
+            icon = "https://img.icons8.com/dusk/344/hammer-throw.png",
+            title = "Athletics")
+        )
+        adventures.add(
+            Adventure(
+                icon = "https://img.icons8.com/dusk/344/cycling-road.png",
+                title = "Cycling"
+            ))
+        adventures.add(
+            Adventure(
+                icon = "https://img.icons8.com/dusk/344/bowling.png",
+                title = "Bowling"
+            ))
+        adventures.add(
+            Adventure(
+                icon = "https://img.icons8.com/dusk/344/tennis.png",
+                title = "Tennis"
+            ))
+
+        return adventures
     }
 
 }

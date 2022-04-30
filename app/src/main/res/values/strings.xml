@@ -1,4 +1,6 @@
 <resources>
     <string name="app_name">TravellyCompose</string>
     <string name="avatar_image">Avatar Image</string>
+    <string name="adventurous">Feeling adventurous?</string>
+    <string name="all">Show all</string>
 </resources>
