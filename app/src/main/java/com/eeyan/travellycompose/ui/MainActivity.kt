@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
@@ -19,6 +20,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.eeyan.travellycompose.R
+import com.eeyan.travellycompose.ui.components.BottomBar
 import com.eeyan.travellycompose.ui.home.HomePage
 import com.eeyan.travellycompose.ui.theme.AppTheme
 import dagger.hilt.android.AndroidEntryPoint
@@ -32,7 +34,9 @@ class MainActivity : ComponentActivity() {
             AppTheme {
                 Scaffold(
                     modifier = Modifier
-                        .fillMaxSize()) {
+                        .fillMaxSize(), bottomBar = {
+                            BottomBar(modifier = Modifier.fillMaxWidth())
+                    }) {
 
                     val navController = rememberNavController()
 
@@ -60,7 +64,10 @@ fun DefaultPreview() {
         Scaffold(
             modifier = Modifier
                 .fillMaxSize()
-                .padding(top = dimensionResource(id = R.dimen.global_margin))) {
+                .padding(top = dimensionResource(id = R.dimen.global_margin)),
+            bottomBar = {
+                BottomBar(modifier = Modifier.fillMaxWidth())
+            }) {
 
             HomePage(navController = rememberNavController())
             

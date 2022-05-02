@@ -2,8 +2,9 @@ package com.eeyan.travellycompose.ui.components
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Text
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Home
+import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -54,4 +55,18 @@ fun AdventureMenu(modifier: Modifier, adventure: Adventure) {
 
     }
 
+}
+
+
+@Composable
+fun BottomBar(modifier: Modifier) {
+
+    BottomAppBar(modifier = modifier,) {
+
+        IconButton(onClick = {  }) {
+            Icon(Icons.Filled.Home, contentDescription = null)
+        }
+
+    }
+    
 }

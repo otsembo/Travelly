@@ -4,6 +4,7 @@ import androidx.compose.animation.animateContentSize
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.MaterialTheme
@@ -23,10 +24,7 @@ import coil.compose.AsyncImage
 import com.eeyan.travellycompose.R
 import com.eeyan.travellycompose.data.model.Adventure
 import com.eeyan.travellycompose.data.model.Sight
-import com.eeyan.travellycompose.ui.components.AdventureMenu
-import com.eeyan.travellycompose.ui.components.AppImage
-import com.eeyan.travellycompose.ui.components.CustomTabs
-import com.eeyan.travellycompose.ui.components.SightCard
+import com.eeyan.travellycompose.ui.components.*
 
 @Composable
 @ExperimentalMaterial3Api
@@ -36,6 +34,7 @@ fun HomePage(
 ) {
     // load state from view model
     val state = homeViewModel.state.value
+    val sightsState = rememberLazyListState()
 
         Column(modifier = Modifier.fillMaxSize()) {
 
@@ -64,7 +63,7 @@ fun HomePage(
 
 
                 LazyRow(modifier = Modifier.padding(start = dimensionResource(id = R.dimen.global_margin),
-                    end = dimensionResource(id = R.dimen.global_margin), top = dimensionResource(id = R.dimen.global_margin))){
+                    end = dimensionResource(id = R.dimen.global_margin), top = dimensionResource(id = R.dimen.global_margin)), state = sightsState){
 
                      items(homeViewModel.sights){
 
@@ -110,7 +109,6 @@ fun HomePage(
                         item: Adventure -> AdventureMenu(modifier = Modifier, adventure = item)
                     }
                 }
-
 
         }
 }
