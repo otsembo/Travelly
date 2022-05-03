@@ -1,9 +1,10 @@
 package com.eeyan.travellycompose.ui.components
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Home
+import androidx.compose.material.icons.filled.*
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -61,12 +62,33 @@ fun AdventureMenu(modifier: Modifier, adventure: Adventure) {
 @Composable
 fun BottomBar(modifier: Modifier) {
 
-    BottomAppBar(modifier = modifier,) {
+    Row(modifier = modifier
+        .fillMaxWidth()
+        .background(MaterialTheme.colorScheme.primaryContainer)
+        .height(dimensionResource(id = R.dimen.bottom_bar_size)), horizontalArrangement = Arrangement.SpaceAround, verticalAlignment = Alignment.CenterVertically,
+    ) {
 
         IconButton(onClick = {  }) {
             Icon(Icons.Filled.Home, contentDescription = null)
         }
 
+        IconButton(onClick = {  }) {
+            Icon(Icons.Filled.Search, contentDescription = null)
+        }
+
+        IconButton(onClick = {  }) {
+            Icon(Icons.Filled.Add, contentDescription = null)
+        }
+
+        IconButton(onClick = {  }) {
+            Icon(Icons.Filled.Settings, contentDescription = null)
+        }
+
+        IconButton(onClick = {  }) {
+            Icon(Icons.Filled.AccountCircle, contentDescription = null)
+        }
+
     }
     
 }
+
