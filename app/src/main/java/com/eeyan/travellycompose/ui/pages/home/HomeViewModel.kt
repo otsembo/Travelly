@@ -1,4 +1,4 @@
-package com.eeyan.travellycompose.ui.home
+package com.eeyan.travellycompose.ui.pages.home
 
 import androidx.compose.runtime.State
 import androidx.compose.runtime.mutableStateOf

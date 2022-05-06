@@ -20,6 +20,7 @@ import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.painterResource
+import androidx.navigation.NavController
 import coil.compose.AsyncImage
 import com.eeyan.travellycompose.R
 import com.eeyan.travellycompose.data.model.Sight
@@ -27,14 +28,14 @@ import com.eeyan.travellycompose.ui.theme.md_theme_image_overlay
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun SightCard(modifier: Modifier, sight: Sight) {
+fun SightCard(modifier: Modifier, sight: Sight, itemClick: () -> Unit) {
 
     ElevatedCard(modifier = modifier
         .width(width = dimensionResource(id = R.dimen.card_size_width))
         .height(height = dimensionResource(id = R.dimen.card_size))
         .padding(end = dimensionResource(id = R.dimen.global_margin))
         .clip(RoundedCornerShape(dimensionResource(id = R.dimen.card_corner))),
-        onClick = {}) {
+        onClick = itemClick) {
 
         Box(modifier = Modifier.fillMaxSize()){
 

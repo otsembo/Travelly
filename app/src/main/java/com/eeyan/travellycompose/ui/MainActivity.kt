@@ -6,22 +6,20 @@ import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Surface
-import androidx.compose.material.Text
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.unit.dp
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.eeyan.travellycompose.R
 import com.eeyan.travellycompose.ui.components.BottomBar
-import com.eeyan.travellycompose.ui.home.HomePage
+import com.eeyan.travellycompose.ui.pages.home.HomePage
+import com.eeyan.travellycompose.ui.navigation.AppPage
+import com.eeyan.travellycompose.ui.pages.details.DetailsPage
 import com.eeyan.travellycompose.ui.theme.AppTheme
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -45,6 +43,10 @@ class MainActivity : ComponentActivity() {
 
                         composable(route = AppPage.HomePage.route){
                             HomePage(navController = navController)
+                        }
+
+                        composable(route = AppPage.DetailsPage.route){
+                            DetailsPage(navController = navController)
                         }
 
 

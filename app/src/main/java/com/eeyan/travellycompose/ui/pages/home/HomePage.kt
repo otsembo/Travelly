@@ -1,4 +1,4 @@
-package com.eeyan.travellycompose.ui.home
+package com.eeyan.travellycompose.ui.pages.home
 
 import androidx.compose.animation.animateContentSize
 import androidx.compose.foundation.layout.*
@@ -25,6 +25,7 @@ import com.eeyan.travellycompose.R
 import com.eeyan.travellycompose.data.model.Adventure
 import com.eeyan.travellycompose.data.model.Sight
 import com.eeyan.travellycompose.ui.components.*
+import com.eeyan.travellycompose.ui.navigation.AppPage
 
 @Composable
 @ExperimentalMaterial3Api
@@ -67,7 +68,7 @@ fun HomePage(
 
                      items(homeViewModel.sights){
 
-                         item: Sight -> SightCard(modifier = Modifier, sight = item)
+                         item: Sight -> SightCard(modifier = Modifier, sight = item, itemClick = {navController.navigate(AppPage.DetailsPage.route)})
 
                      }
 
