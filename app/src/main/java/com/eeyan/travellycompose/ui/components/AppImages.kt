@@ -10,12 +10,14 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.stringResource
 import coil.compose.AsyncImage
 import com.eeyan.travellycompose.R
 import com.eeyan.travellycompose.data.model.Adventure
+import com.eeyan.travellycompose.ui.theme.md_theme_light_secondary
 
 @Composable
 fun AppImage(modifier: Modifier, url:String) {
@@ -90,5 +92,32 @@ fun BottomBar(modifier: Modifier) {
 
     }
     
+}
+
+
+@Composable
+fun CircledNavigator(icon:Int) {
+
+    Box(
+        modifier = Modifier
+            .clip(
+                CircleShape
+            )
+            .shadow(elevation = dimensionResource(id = R.dimen.card_elevation))
+            .background(md_theme_light_secondary)
+            .padding(
+                dimensionResource(id = R.dimen.global_margin)
+            ),
+    ) {
+
+        AsyncImage(model = icon, contentDescription = null, modifier = Modifier
+            .align(
+                Alignment.Center
+            )
+            .size(dimensionResource(id = R.dimen.like_btn_image_size)),
+            colorFilter = ColorFilter.tint(MaterialTheme.colorScheme.primary))
+
+    }
+
 }
 
