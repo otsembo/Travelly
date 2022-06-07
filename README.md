@@ -5,6 +5,9 @@ Clone and enjoy
 
 The application has included [Clean Architecture by Uncle Bob](https://www.oreilly.com/library/view/clean-architecture-a/9780134494272/) that guides in separation of concerns for easier testing and debugging.
 
+## Design Motivation
+The design template is motivated by [this](https://dribbble.com/shots/18106551-Travel-App) dribble file
+
 ## Tools
 The application has been built using the following:
 
