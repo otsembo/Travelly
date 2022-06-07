@@ -18,6 +18,7 @@ import androidx.navigation.NavController
 import coil.compose.AsyncImage
 import com.eeyan.travellycompose.R
 import com.eeyan.travellycompose.ui.components.CircledNavigator
+import com.eeyan.travellycompose.ui.components.SightImage
 import com.eeyan.travellycompose.ui.theme.md_theme_light_background
 import com.eeyan.travellycompose.ui.theme.md_theme_light_secondary
 
@@ -55,6 +56,10 @@ fun DetailsPage(
                 CircledNavigator( icon = R.drawable.ic_not_fav)
 
             }
+
+            SightImage(modifier = Modifier.align(Alignment.End), image = sightInfo.thumbThree, isTop = true, )
+            SightImage(modifier = Modifier.align(Alignment.End), image = sightInfo.thumbTwo, isTop = false, )
+            SightImage(modifier = Modifier.align(Alignment.End), image = sightInfo.thumbOne, isTop = false, )
 
         }
 

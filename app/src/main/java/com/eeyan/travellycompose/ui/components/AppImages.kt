@@ -1,8 +1,10 @@
 package com.eeyan.travellycompose.ui.components
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.*
 import androidx.compose.material3.*
@@ -12,8 +14,10 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.ColorFilter
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
 import com.eeyan.travellycompose.R
 import com.eeyan.travellycompose.data.model.Adventure
@@ -104,9 +108,9 @@ fun CircledNavigator(icon:Int) {
                 CircleShape
             )
             .shadow(elevation = dimensionResource(id = R.dimen.card_elevation))
-            .background(md_theme_light_secondary)
+            .background(MaterialTheme.colorScheme.surfaceVariant)
             .padding(
-                dimensionResource(id = R.dimen.global_margin)
+                dimensionResource(id = R.dimen.icon_margin)
             ),
     ) {
 
@@ -119,5 +123,27 @@ fun CircledNavigator(icon:Int) {
 
     }
 
+}
+
+
+@Composable
+fun SightImage(modifier: Modifier, image:String, isTop:Boolean) {
+    
+    AsyncImage(model = image, contentDescription = null,
+        modifier = modifier
+            .padding(
+                top = when (isTop) {
+                    true -> dimensionResource(id = R.dimen.sight_image_top_margin)
+                    else -> dimensionResource(id = R.dimen.sight_image_margin)
+                }
+            )
+            .border(
+                width = dimensionResource(id = com.google.android.material.R.dimen.m3_badge_radius),
+                color = MaterialTheme.colorScheme.surfaceVariant
+            )
+            .clip(RoundedCornerShape(dimensionResource(id = com.google.android.material.R.dimen.m3_badge_radius)))
+            .size(dimensionResource(id = R.dimen.sight_image_size))
+            , contentScale = ContentScale.Crop)
+    
 }
 

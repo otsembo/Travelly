@@ -71,7 +71,7 @@ fun DefaultPreview() {
                 BottomBar(modifier = Modifier.fillMaxWidth())
             }) {
 
-            HomePage(navController = rememberNavController())
+            DetailsPage(navController = rememberNavController())
             
         }
         

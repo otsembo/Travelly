@@ -24,6 +24,7 @@ import androidx.navigation.NavController
 import coil.compose.AsyncImage
 import com.eeyan.travellycompose.R
 import com.eeyan.travellycompose.data.model.Sight
+import com.eeyan.travellycompose.ui.theme.md_theme_dark_inverseSurface
 import com.eeyan.travellycompose.ui.theme.md_theme_image_overlay
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -51,8 +52,8 @@ fun SightCard(modifier: Modifier, sight: Sight, itemClick: () -> Unit) {
             })
 
             Text(text = sight.title, 
-                style = MaterialTheme.typography.bodyLarge, 
-                color = MaterialTheme.colorScheme.primary,
+                style = MaterialTheme.typography.bodyMedium,
+                color = md_theme_dark_inverseSurface,
                 modifier = Modifier
                     .align(Alignment.BottomStart)
                     .padding(
@@ -87,7 +88,7 @@ fun LikeBtn(modifier: Modifier, isLiked:Boolean) {
         Image(painter = if(myLikes)
             painterResource(id = R.drawable.ic_fav)
             else painterResource(id = R.drawable.ic_not_fav),
-            contentDescription = null, colorFilter = ColorFilter.tint(MaterialTheme.colorScheme.primary),
+            contentDescription = null, colorFilter = ColorFilter.tint(md_theme_dark_inverseSurface),
             modifier = Modifier
                 .size(dimensionResource(id = R.dimen.like_btn_image_size))
                 .align(Alignment.Center)
