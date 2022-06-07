@@ -2,6 +2,7 @@
 <resources>
     <dimen name="global_margin">16dp</dimen>
     <dimen name="icon_margin">8dp</dimen>
+    <dimen name="pop_icon_margin">1dp</dimen>
     <dimen name="text_icon_margin">4dp</dimen>
     <dimen name="logo_size">50dp</dimen>
     <dimen name="tab_text_pad">10dp</dimen>
@@ -16,7 +17,9 @@
     <dimen name="adventure_icon">65dp</dimen>
     <dimen name="bottom_bar_size">56dp</dimen>
     <dimen name="details_image">550dp</dimen>
-    <dimen name="sight_image_size">75dp</dimen>
-    <dimen name="sight_image_top_margin">100dp</dimen>
+    <dimen name="sight_image_size">65dp</dimen>
+    <dimen name="sight_image_top_margin">50dp</dimen>
     <dimen name="sight_image_margin">20dp</dimen>
+
+    <dimen name="detail_card_corner">25dp</dimen>
 </resources>
